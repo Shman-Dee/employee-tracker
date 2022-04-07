@@ -1,8 +1,9 @@
 const mysql = require("mysql2");
 const inquirer = require("inquirer");
-const cTable = require('console.table');
+const cTable = require("console.table");
+const connection = require("./connection");
 
-require('dotenv').config();
+require("dotenv").config();
 
 const greeting = () => {
   console.log(`
@@ -13,5 +14,12 @@ const greeting = () => {
   console.log("***********************************")
   
   `);
-console.log('\n')}
+  console.log("\n");
+};
 greeting();
+
+const options = () => {
+  inquirer.prompt([{}]);
+};
+
+options();
