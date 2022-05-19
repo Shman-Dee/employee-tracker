@@ -1,38 +1,22 @@
-const mysql = require('mysql2')
 const inquirer = require('inquirer')
 const cTable = require('console.table')
+const connection = require('./connection')
 
-// require('dotenv').config();
-
-const connection = mysql.createConnection({
-  host: 'localhost',
-  user: 'root',
-  password: 'password',
-  database: 'employee_db',
-  // multipleStatements: true,
-})
-
-// connection.connect(function (err) {
-//   if (err) throw err;
-//   console.log("Miss you dad! We are connected on ID " + connection.threadId);
-// });
-
-connection.connect()
-
-console.log('line 17')
-
-const greeting = () => {
-  console.log(`
-  console.log("***********************************")
+// function to display welcome message
+const welcome = () => {
+  console.log(`console.log("***********************************")
   console.log("*                                 *")
   console.log("*        EMPLOYEE MANAGER         *")
   console.log("*                                 *")
-  console.log("***********************************")
-  
-  `)
+  console.log("***********************************")`)
   console.log('\n')
 }
-greeting()
+// call welcome function to display banner
+welcome()
+
+connection.connect()
+
+
 
 function startPrompt() {
   inquirer
