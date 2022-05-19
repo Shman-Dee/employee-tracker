@@ -1,34 +1,38 @@
---CREATING OUR DATABASE --
-DROP DATABASE IF EXISTS employee_db;
 
-CREATE DATABASE employee_db;
+DROP DATABASE IF EXISTS employees_db;
 
-USE employee_db;
+CREATE DATABASE employees_db;
 
--- DEPARTMENT TABLE ----
+USE employees_db;
+
 CREATE TABLE department (
-  id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-  name VARCHAR(30)
- 
+    id INT NOT NULL AUTO_INCREMENT,
+    name VARCHAR(30),
+    PRIMARY KEY (id)
 );
--- DEPARTMENT TABLE ----
-CREATE TABLE role (
-  id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-  title VARCHAR(30),
-  salary DECIMAL,
-  department_id INT,
-  FOREIGN KEY (department_id) REFERENCES department(id)
-);
--- EMPLOYEE ROLE TABLE ----
-CREATE TABLE employee (
-  id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-  first_name VARCHAR(30),
-  last_name VARCHAR(30),
-  manager_id INT,
-  role_id INT,
-  FOREIGN KEY (role_id) REFERENCES role(id),
-  FOREIGN KEY (manager_id) REFERENCES employee(id)
 
+CREATE TABLE role (
+    id INT NOT NULL AUTO_INCREMENT,
+    title VARCHAR(30),
+    salary DECIMAL,
+    department_id INT,
+    PRIMARY KEY (id),
+    FOREIGN KEY (department_id)
+    REFERENCES department(id)
+    ON DELETE SET NULL
+);
+CREATE TABLE employee (
+    id INT NOT NULL AUTO_INCREMENT,
+    firstName VARCHAR(30),
+    lastName VARCHAR(30),
+    role_id INT,
+    manager_id INT,
+    INDEX manager_ind (manager_id),
+    CONSTRAINT fk_manager FOREIGN KEY (manager_id) REFERENCES employee(id) ON DELETE SET NULL,
+    PRIMARY KEY (id),
+    FOREIGN KEY (role_id)
+    REFERENCES role(id)
+    ON DELETE SET NULL
 );
 
 -- DEPARTMENT SEEDS -----
@@ -58,19 +62,19 @@ INSERT INTO role (title, salary, department_id)
 VALUE ("Lawyer", 190000, 4);
 
 -- EMPLOYEE SEEDS -------
-INSERT INTO employee (first_name, last_name, manager_id, role_id)
+INSERT INTO employee (firstName, lastName, manager_id, role_id)
 VALUE ("Jessica", "Haze", null, 1);
-INSERT INTO employee (first_name, last_name, manager_id, role_id)
+INSERT INTO employee (firstName, lastName, manager_id, role_id)
 VALUE ("Tiffany", "Patric", null, 2);
-INSERT INTO employee (first_name, last_name, manager_id, role_id)
+INSERT INTO employee (firstName, lastName, manager_id, role_id)
 VALUE ("Mia","Lam",null,3);
-INSERT INTO employee (first_name, last_name, manager_id, role_id)
+INSERT INTO employee (firstName, lastName, manager_id, role_id)
 VALUE ("Bently", "Lao", 1, 4);
-INSERT INTO employee (first_name, last_name, manager_id, role_id)
+INSERT INTO employee (firstName, lastName, manager_id, role_id)
 VALUE ("Chris", "Melby", 4, 5);
-INSERT INTO employee (first_name, last_name, manager_id, role_id)
+INSERT INTO employee (firstName, lastName, manager_id, role_id)
 VALUE ("Jason", "Baker", 1, 6);
-INSERT INTO employee (first_name, last_name, manager_id, role_id)
+INSERT INTO employee (firstName, lastName, manager_id, role_id)
 VALUE ("Tom", "Nice", 2, 7);
 
 -- SELECTING FOR CREATING 
