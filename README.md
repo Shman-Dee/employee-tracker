@@ -1,7 +1,7 @@
-#Employee-tracker
+##
 
 <div id="top"></div>
-    <h3 align="center">team-generator</h3>
+    <h3 align="center">Employee-tracker</h3>
     
   ## Table of Contents
   * [Description](#description)
