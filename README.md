@@ -1,4 +1,4 @@
-# JS_day_planner
+#Employee-tracker
 
 <div id="top"></div>
     <h3 align="center">team-generator</h3>
@@ -15,22 +15,22 @@
   
   ## Description
 
-this is an application for a full stack todo app.
+this is an application for an employee tracker built in the CLI.
 
   <p align="right">(<a href="#top">back to top</a>)</p>
 
-  ## Installation Instructions
-  
-  run server with 'node server' in the CLI. load webpage in localhost:3001
-  
+## Installation Instructions
+
+run `npm i` in the CLI. run the server with `node server` in the CLI
+
   <p align="right">(<a href="#top">back to top</a>)</p>
   
   ## Usage
 
-  checkout the live app on heroku [Click here to view](https://todoappmay22.herokuapp.com/).
-  
-  andy@andy.com
-  
+[Click here to watch the demo](https://drive.google.com/file/d/1tHpcuH8kUl-2gElGk-204yZHfKTMr58D/view?usp=sharing).
+
+andy@andy.com
+
   <p align="right">(<a href="#top">back to top</a>)</p>
   
   ## License
@@ -41,8 +41,10 @@ this is an application for a full stack todo app.
   my buddies steve and justin helped me
   <p align="right">(<a href="#top">back to top</a>)</p>
 
-  ## Testing
-  contact me for testing
+## Testing
+
+contact me for testing
+
   <p align="right">(<a href="#top">back to top</a>)</p>
   
   ## Questions
@@ -50,4 +52,3 @@ this is an application for a full stack todo app.
   
   Email: [d@d.com](d@d.com)
   <p align="right">(<a href="#top">back to top</a>)</p>
-
